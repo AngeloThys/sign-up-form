@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Sign-up Form</title>
+</head>
+
+<body>
+    <div class="title-background">
+        <div class="title-banner">
+            <img class="title-image" src="./assets/img/odin-lined.png" alt="odin logo">
+            <p class="title">ODIN</p>
+        </div>
+        <div class="credits-banner">
+            <p class="credits">
+                Photo by <a
+                    href="https://unsplash.com/@dewang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dewang
+                    Gupta</a> on <a
+                    href="https://unsplash.com/photos/ESEnXckWlLY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </p>
+        </div>
+    </div>
+    <div class="form-page-container">
+        <div class="page-container">
+            <p>This is not a real online service! You know you need something in your life to help you realize your
+                deepest
+                dreams. Sign up <span class="italic">now</span> to get started.</p>
+            <p>You <span class="italic">know</span> you want to.</p>
+            <p class="shoutout">Let's do this!</p>
+        </div>
+        <form action="localhost:5500" method="POST" id="signup">
+            <div class="form-container">
+                <div class="row">
+                    <div>
+                        <label for="firstName">FIRST NAME</label>
+                        <input type="text" name="firstName" id="firstName">
+                    </div>
+                    <div>
+                        <label for="lastName">LAST NAME</label>
+                        <input type="text" name="lastName" id="lastName">
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div>
+                        <label for="phoneNumber">PHONE NUMBER</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber">
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div>
+                        <label for="passwordConfirm">CONFIRM PASSWORD</label>
+                        <input type="password" name="passwordConfirm" id="passwordConfirm">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="page-container">
+            <button type="submit" form="signup">Create Account</button>
+            <p class="form-subtext">Already have an account? <span class="shoutout">Log in</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

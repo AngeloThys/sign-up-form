@@ -1,0 +1,169 @@
+:root {
+    --melon: #ECAD9B;
+    --light-coral: #DB918B;
+    --peach: #FDCBA4;
+    --eggplant: #6D495F;
+    --china-rose: #9B6074;
+}
+
+@font-face {
+    font-family: norse-bold;
+    src: url(./assets/fonts/Norse-Bold.otf);
+}
+
+html,
+body {
+    max-width: 100vw;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+    display: flex;
+    background-color: #fbf0ed;
+}
+
+.title-background {
+    position: relative;
+    height: 100vh;
+    min-width: 200px;
+    width: clamp(200px, 30vw, 500px);
+    background:
+        url(./assets/img/clouds.jpg) center / cover no-repeat scroll;
+}
+
+.title-banner {
+    position: absolute;
+    top: 175px;
+    height: clamp(75px, 12vw, 100px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title-image {
+    height: clamp(52px, 8vw, 90px);
+    width: auto;
+}
+
+.title {
+    color: #fff;
+    font-family: norse-bold;
+    font-size: clamp(52px, 8vw, 90px);
+}
+
+.credits-banner {
+    position: absolute;
+    bottom: 10px;
+    height: 30px;
+    width: 76%;
+    left: 12%;
+    right: 12%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.credits {
+    color: #fff;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+.credits>a:link,
+.credits>a:visited {
+    color: var(--peach);
+}
+
+.italic {
+    font-style: italic;
+    color: var(--china-rose);
+    font-weight: 700;
+}
+
+.shoutout {
+    color: var(--china-rose);
+    font-weight: 700;
+}
+
+.form-page-container {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-container {
+    margin: 1rem 3rem;
+}
+
+.form-page-container>p {
+    max-width: 75ch;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 1.75rem 3rem;
+    box-shadow: 0px 0px 4px 0px var(--melon);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+
+}
+
+.form-container>.row {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-container>.row>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2ch;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: 3px solid var(--peach);
+}
+
+button {
+    color: #fff;
+    font-weight: 700;
+    background-color: var(--china-rose);
+    height: 50px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 2px 0px var(--eggplant);
+    transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 0px 3px 2px 0px var(--eggplant);
+    transform: translateY(1px);
+}
+
+button:active {
+    box-shadow: 0px 0px 2px 0px var(--eggplant);
+    transform: translateY(4px);
+}
+
+.form-subtext {
+    font-size: 0.75rem;
+}
