@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Sign-up Form</title>
 </head>
 
@@ -38,32 +40,38 @@
             <div class="form-container">
                 <div class="row">
                     <div>
-                        <label for="firstName">FIRST NAME</label>
-                        <input type="text" name="firstName" id="firstName">
+                        <label for="firstName">FIRST NAME <span aria-label="required">*</span></label>
+                        <input type="text" name="firstName" id="firstName" required placeholder="John">
+                        <div class="input-info-firstName"></div>
                     </div>
                     <div>
-                        <label for="lastName">LAST NAME</label>
-                        <input type="text" name="lastName" id="lastName">
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <label for="email">EMAIL</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="phoneNumber">PHONE NUMBER</label>
-                        <input type="tel" name="phoneNumber" id="phoneNumber">
+                        <label for="lastName">LAST NAME <span aria-label="required">*</span></label>
+                        <input type="text" name="lastName" id="lastName" required placeholder="Doe">
+                        <div class="input-info-lastName"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div>
-                        <label for="password">PASSWORD</label>
-                        <input type="password" name="password" id="password">
+                        <label for="email">EMAIL <span aria-label="required">*</span></label>
+                        <input type="email" name="email" id="email" required placeholder="johndoe85@gmail.com">
+                        <div class="input-info-email"></div>
                     </div>
                     <div>
-                        <label for="passwordConfirm">CONFIRM PASSWORD</label>
-                        <input type="password" name="passwordConfirm" id="passwordConfirm">
+                        <label for="phoneNumber">PHONE NUMBER <span aria-label="required">*</span></label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" required placeholder="123456789">
+                        <div class="input-info-phoneNumber"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="password">PASSWORD <span aria-label="required">*</span></label>
+                        <input type="password" name="password" id="password" required>
+                        <div class="input-info-password"></div>
+                    </div>
+                    <div>
+                        <label for="passwordConfirm">CONFIRM PASSWORD <span aria-label="required">*</span></label>
+                        <input type="password" name="passwordConfirm" id="passwordConfirm" required>
+                        <div class="input-info-passwordConfirm"></div>
                     </div>
                 </div>
             </div>
