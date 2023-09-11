@@ -1,67 +1,96 @@
+// All conditions start unmet
+let firstNameValid = false;
+let lastNameValid = false;
+let emailValid = false;
+let phoneNumberValid = false;
+let passwordValid = false;
+let passwordConfirmValid = false;
+
 // Only letters are allowed in the name
 const namePattern = /^[A-Za-z]+$/;
 const firstNameInput = document.querySelector("#firstName");
 const firstNameInfo = document.querySelector(".input-info-firstName");
-firstNameInput.addEventListener('keyup', () => {
+function firstNameCheck() {
     if (firstNameInput.value.match(namePattern)) {
         firstNameInput.style.outline = '3px solid forestgreen';
-        firstNameInfo.textContent = 'What a beautiful name!';
+        firstNameInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                                   <p>What a beautiful name!</p>`;
         firstNameInfo.style.color = 'forestgreen';
+        firstNameValid = true;
     } else {
         firstNameInput.style.outline = '3px solid crimson';
         firstNameInfo.textContent = 'A name should consist of letters only.';
+        firstNameInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                                   <p>A name should consist of letters only.</p>`;
         firstNameInfo.style.color = 'crimson';
+        firstNameValid = false;
     }
-});
+}
+firstNameInput.addEventListener('keyup', firstNameCheck);
 
 const lastNameInput = document.querySelector("#lastName");
 const lastNameInfo = document.querySelector(".input-info-lastName");
-lastNameInput.addEventListener('keyup', () => {
+function lastNameCheck() {
     if (lastNameInput.value.match(namePattern)) {
         lastNameInput.style.outline = '3px solid forestgreen';
-        lastNameInfo.textContent = 'Perfect!';
+        lastNameInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                                  <p>Perfect!</p>`;
         lastNameInfo.style.color = 'forestgreen';
+        lastNameValid = true;
     } else {
         lastNameInput.style.outline = '3px solid crimson';
-        lastNameInfo.textContent = 'A name should consist of letters only.';
+        lastNameInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                                  <p>A name should consist of letters only.</p>`;
         lastNameInfo.style.color = 'crimson';
+        lastNameValid = false;
     }
-});
+}
+lastNameInput.addEventListener('keyup', lastNameCheck);
 
 // HTML standard email validation
 const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 const emailInput = document.querySelector("#email");
 const emailInfo = document.querySelector(".input-info-email");
-emailInput.addEventListener('keyup', () => {
+function emailCheck() {
     if (emailInput.value.match(emailPattern)) {
         emailInput.style.outline = '3px solid forestgreen';
         emailInfo.style.color = 'forestgreen';
-        emailInfo.textContent = 'The email format is correct!';
+        emailInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                               <p>The email format is correct!</p>`;
+        emailValid = true;
     } else {
         emailInput.style.outline = '3px solid crimson';
         emailInfo.style.color = 'crimson';
-        emailInfo.textContent = 'Try something with an @.';
+        emailInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                               <p>Try something with an @.</p>`;
+        emailValid = false;
     }
-});
+}
+emailInput.addEventListener('keyup', emailCheck);
 
 const phoneNumberPattern = /^\d{9,12}$/;
 const phoneNumberInput = document.querySelector("#phoneNumber");
 const phoneNumberInfo = document.querySelector(".input-info-phoneNumber");
-phoneNumberInput.addEventListener('keyup', () => {
+function phoneNumberCheck() {
     if (phoneNumberInput.value.match(phoneNumberPattern)) {
         phoneNumberInput.style.outline = '3px solid forestgreen';
         phoneNumberInfo.style.color = 'forestgreen';
-        phoneNumberInfo.textContent = 'The phone number format is correct!';
+        phoneNumberInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                                     <p>The phone number format is correct!</p>`;
+        phoneNumberValid = true;
     } else {
         phoneNumberInput.style.outline = '3px solid crimson';
         phoneNumberInfo.style.color = 'crimson';
-        phoneNumberInfo.textContent = 'A phone number should be 9 to 12 numbers, no spaces.';
+        phoneNumberInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                                     <p>A phone number should be 9 to 12 numbers, no spaces.</p>`;
+        phoneNumberValid = false;
     }
-});
+}
+phoneNumberInput.addEventListener('keyup', phoneNumberCheck);
 
 const passwordInput = document.querySelector("#password");
 const passwordInfo = document.querySelector(".input-info-password");
-passwordInput.addEventListener('keyup', () => {
+function passwordCheck() {
     const characterAmount = document.querySelector("#characterAmount");
     if (passwordInput.value.length > 12) {
         characterAmount.style.color = 'forestgreen';
@@ -106,22 +135,57 @@ passwordInput.addEventListener('keyup', () => {
         && uppercaseRegex.test(passwordInput.value)
         && numberRegex.test(passwordInput.value)
         && specialRegex.test(passwordInput.value)) {
-            passwordInfo.style.color = 'forestgreen';
-            passwordInfo.textContent = 'All conditions are being met!';
-        } else {
-            passwordInfo.style.color = 'crimson';
-            passwordInfo.textContent = 'Check the password conditions on the right.';
-        }
-});
+        passwordInput.style.outline = '3px solid forestgreen';
+        passwordInfo.style.color = 'forestgreen';
+        passwordInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                                  <p>All conditions are being met!</p>`;
+        passwordValid = true;
+    } else {
+        passwordInput.style.outline = '3px solid crimson';
+        passwordInfo.style.color = 'crimson';
+        passwordInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                                  <p>Check the password conditions on the right.</p>`;
+        passwordValid = false;
+    }
+}
+passwordInput.addEventListener('keyup', passwordCheck);
 
 const passwordConfirmInput = document.querySelector("#passwordConfirm");
 const passwordConfirmInfo = document.querySelector(".input-info-passwordConfirm");
-passwordConfirmInput.addEventListener('keyup', () => {
+function passwordConfirmCheck() {
     if (passwordConfirmInput.value === passwordInput.value) {
+        passwordConfirmInput.style.outline = '3px solid forestgreen';
         passwordConfirmInfo.style.color = 'forestgreen';
-        passwordConfirmInfo.textContent = 'The passwords match!';
+        passwordConfirmInfo.innerHTML = `<span class="material-symbols-outlined">done</span>
+                                         <p>The passwords match!</p>`;
+        passwordConfirmValid = true;
     } else {
+        passwordConfirmInput.style.outline = '3px solid crimson';
         passwordConfirmInfo.style.color = 'crimson';
-        passwordConfirmInfo.textContent = 'The passwords do not match.';
+        passwordConfirmInfo.innerHTML = `<span class="material-symbols-outlined">close</span>
+                                         <p>The passwords do not match.</p>`;
+        passwordConfirmValid = false;
+    }
+}
+passwordConfirmInput.addEventListener('keyup', passwordConfirmCheck);
+
+const signupForm = document.querySelector("#signup");
+const signupFormButton = document.querySelector("#signup-button");
+signupFormButton.addEventListener('click', () => {
+    if (firstNameValid
+        && lastNameValid
+        && emailValid
+        && phoneNumberValid
+        && passwordValid
+        && passwordConfirmValid) {
+        signupForm.submit();
+        console.log('sent');
+    } else {
+        firstNameCheck();
+        lastNameCheck();
+        emailCheck();
+        phoneNumberCheck();
+        passwordCheck();
+        passwordConfirmCheck();
     }
 });

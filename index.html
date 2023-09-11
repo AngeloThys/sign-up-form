@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>Sign-up Form</title>
 </head>
@@ -36,7 +37,7 @@
             <p>You <span class="italic">know</span> you want to.</p>
             <p class="shoutout">Let's do this!</p>
         </div>
-        <form action="localhost:5500" method="POST" id="signup">
+        <form action="./index.html" method="POST" id="signup">
             <div class="form-container">
                 <div class="column">
                     <div class="row">
@@ -81,16 +82,31 @@
                 </div>
                 <div class="column">
                     <h1>PASSWORD CONDITIONS</h1>
-                    <p id="characterAmount">At least 12 characters</p>
-                    <p id="characterLowercase">One lowercase character</p>
-                    <p id="characterUppercase">One uppercase character</p>
-                    <p id="characterNumber">One number</p>
-                    <p id="characterSpecial">One special character</p>
+                    <p id="characterAmount">
+                        <span class="material-symbols-outlined">bolt</span> 
+                        At least 12 characters
+                    </p>
+                    <p id="characterLowercase">
+                        <span class="material-symbols-outlined">bolt</span>
+                        One lowercase character
+                    </p>
+                    <p id="characterUppercase">
+                        <span class="material-symbols-outlined">bolt</span>
+                        One uppercase character
+                    </p>
+                    <p id="characterNumber">
+                        <span class="material-symbols-outlined">bolt</span>
+                        One number
+                    </p>
+                    <p id="characterSpecial">
+                        <span class="material-symbols-outlined">bolt</span>
+                        One special character
+                    </p>
                 </div>
             </div>
         </form>
         <div class="page-container">
-            <button type="submit" form="signup">Create Account</button>
+            <button id="signup-button">Create Account</button>
             <p class="form-subtext">Already have an account? <span class="shoutout">Log in</span></p>
         </div>
     </div>
