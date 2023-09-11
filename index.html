@@ -38,41 +38,54 @@
         </div>
         <form action="localhost:5500" method="POST" id="signup">
             <div class="form-container">
-                <div class="row">
-                    <div>
-                        <label for="firstName">FIRST NAME <span aria-label="required">*</span></label>
-                        <input type="text" name="firstName" id="firstName" required placeholder="John">
-                        <div class="input-info-firstName"></div>
+                <div class="column">
+                    <div class="row">
+                        <p class="form-subtext">The required fields are marked with an asterisk (*).</p>
                     </div>
-                    <div>
-                        <label for="lastName">LAST NAME <span aria-label="required">*</span></label>
-                        <input type="text" name="lastName" id="lastName" required placeholder="Doe">
-                        <div class="input-info-lastName"></div>
+                    <div class="row">
+                        <div>
+                            <label for="firstName">FIRST NAME <span aria-label="required">*</span></label>
+                            <input type="text" name="firstName" id="firstName" required placeholder="John">
+                            <div class="input-info-firstName"></div>
+                        </div>
+                        <div>
+                            <label for="lastName">LAST NAME <span aria-label="required">*</span></label>
+                            <input type="text" name="lastName" id="lastName" required placeholder="Doe">
+                            <div class="input-info-lastName"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="email">EMAIL <span aria-label="required">*</span></label>
+                            <input type="email" name="email" id="email" required placeholder="johndoe85@gmail.com">
+                            <div class="input-info-email"></div>
+                        </div>
+                        <div>
+                            <label for="phoneNumber">PHONE NUMBER <span aria-label="required">*</span></label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" required placeholder="123456789">
+                            <div class="input-info-phoneNumber"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="password">PASSWORD <span aria-label="required">*</span></label>
+                            <input type="password" name="password" id="password" required>
+                            <div class="input-info-password"></div>
+                        </div>
+                        <div>
+                            <label for="passwordConfirm">CONFIRM PASSWORD <span aria-label="required">*</span></label>
+                            <input type="password" name="passwordConfirm" id="passwordConfirm" required>
+                            <div class="input-info-passwordConfirm"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div>
-                        <label for="email">EMAIL <span aria-label="required">*</span></label>
-                        <input type="email" name="email" id="email" required placeholder="johndoe85@gmail.com">
-                        <div class="input-info-email"></div>
-                    </div>
-                    <div>
-                        <label for="phoneNumber">PHONE NUMBER <span aria-label="required">*</span></label>
-                        <input type="tel" name="phoneNumber" id="phoneNumber" required placeholder="123456789">
-                        <div class="input-info-phoneNumber"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <label for="password">PASSWORD <span aria-label="required">*</span></label>
-                        <input type="password" name="password" id="password" required>
-                        <div class="input-info-password"></div>
-                    </div>
-                    <div>
-                        <label for="passwordConfirm">CONFIRM PASSWORD <span aria-label="required">*</span></label>
-                        <input type="password" name="passwordConfirm" id="passwordConfirm" required>
-                        <div class="input-info-passwordConfirm"></div>
-                    </div>
+                <div class="column">
+                    <h1>PASSWORD CONDITIONS</h1>
+                    <p id="characterAmount">At least 12 characters</p>
+                    <p id="characterLowercase">One lowercase character</p>
+                    <p id="characterUppercase">One uppercase character</p>
+                    <p id="characterNumber">One number</p>
+                    <p id="characterSpecial">One special character</p>
                 </div>
             </div>
         </form>
