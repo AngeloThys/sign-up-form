@@ -178,8 +178,7 @@ signupFormButton.addEventListener('click', () => {
         && phoneNumberValid
         && passwordValid
         && passwordConfirmValid) {
-        signupForm.submit();
-        console.log('sent');
+        window.alert('Your form has been submitted!');
     } else {
         firstNameCheck();
         lastNameCheck();
