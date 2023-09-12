@@ -7,7 +7,7 @@ let passwordValid = false;
 let passwordConfirmValid = false;
 
 // Only letters are allowed in the name
-const namePattern = /^[A-Za-z]+$/;
+const namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 const firstNameInput = document.querySelector("#firstName");
 const firstNameInfo = document.querySelector(".input-info-firstName");
 function firstNameCheck() {
